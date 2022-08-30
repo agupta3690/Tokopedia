@@ -10,6 +10,8 @@
 
 - Reporting is implemented using Extent Reports.
 
+- Path params are sent using the configuration.properties file.
+
 
 
 ### How to run the tests? ###
@@ -17,3 +19,10 @@
 - Tests can be executed by right clicking on the runner file and running it as junit test.
 
 - Alternatively, the tests can be executed via command line by passing the relevant cucumber tags with mvn test command.
+
+
+### What can be improved? ###
+
+- Common methods can be created and then be reused within the tests. This will increase the code reusability.
+
+- Enums related to the platform can be created and a logic can be written to use them to make the framework platform independent.
