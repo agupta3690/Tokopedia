@@ -18,7 +18,7 @@ Date:   29 Aug 2022
 public class ConfigFileReader {
 
 	private Properties properties;
-	private final String propertyFilePath= "resources/libs/configuration.properties";
+	private final String propertyFilePath= "resources/configuration.properties";
 
 
 	//Method to read the properties file
