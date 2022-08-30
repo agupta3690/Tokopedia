@@ -21,6 +21,7 @@ public class ConfigFileReader {
 	private final String propertyFilePath= "resources/libs/configuration.properties";
 
 
+	//Method to read the properties file
 	public ConfigFileReader(){
 		BufferedReader reader;
 
@@ -39,6 +40,7 @@ public class ConfigFileReader {
 		}		
 	}
 
+	//Method to set the report path
 	public String getReportConfigPath(){
 		String reportConfigPath = properties.getProperty("reportConfigPath");
 		if(reportConfigPath!= null) return reportConfigPath;
@@ -46,6 +48,7 @@ public class ConfigFileReader {
 	}
 
 
+	//Method to set the app URL. Relevant in case of UI autmation cases
 	public String getApplicationUrl() {
 		String url = properties.getProperty("testAppUrl");
 		if(url != null) return url;
