@@ -40,12 +40,13 @@ public class ConfigFileReader {
 		}		
 	}
 
-	//Method to set the report path
-	public String getReportConfigPath(){
-		String reportConfigPath = properties.getProperty("reportConfigPath");
+	//Method to set the order process path params
+	public String getOrderProcessPathParams(){
+		String reportConfigPath = properties.getProperty("orderProcessPath");
 		if(reportConfigPath!= null) return reportConfigPath;
-		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
+		else throw new RuntimeException("Order Process Path not specified in the Configuration.properties file for the orderProcessPath");		
 	}
+
 
 
 	//Method to set the app URL. Relevant in case of UI autmation cases
