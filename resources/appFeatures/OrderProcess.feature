@@ -56,5 +56,5 @@ Then User gets the response with proper error "<code>"
 
 Examples: 
 |URI|token|code|order_id|order_desc|order_status|timestamp|special_order|
-|https://tokopedia.com|test123|403|123|sample description_1|New|1642321210439|false|
-|https://tokopedia.com|test123|403|456|sample description_2|New|1642321210450|false|
+|https://tokopedia.com|test123|404|123|sample description_1|New|1642321210439|false|
+|https://tokopedia.com|test123|404|456|sample description_2|New|1642321210450|false|
