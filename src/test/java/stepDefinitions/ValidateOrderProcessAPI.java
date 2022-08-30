@@ -31,7 +31,7 @@ public class ValidateOrderProcessAPI {
 
 	RequestSpecification request;
 	Response response;	
-	String path = "/processOrder";
+	ConfigFileReader configFileReader = new ConfigFileReader();
 
 
 	@Given("User sets the API request {string}")
@@ -65,7 +65,7 @@ public class ValidateOrderProcessAPI {
 		JSONObject jo = new JSONObject(map);
 		
 		//Making the post request with the valid payload
-		given().header("Content-type", "application/json").body(jo).when().post(path).thenReturn().asString();
+		given().header("Content-type", "application/json").body(jo).when().post(configFileReader.getOrderProcessPathParams()).thenReturn().asString();
 		ExtentCucumberAdapter.addTestStepLog("<b>" + "<font color=" + "green>" + "Valid request sent to the server" + "</font>" + "</b>");
 
 	}
@@ -105,7 +105,7 @@ public class ValidateOrderProcessAPI {
 		JSONObject jo = new JSONObject(map);
 		
 		//Making the post request with the payload having invalid order status
-		given().header("Content-type", "application/json").body(jo).when().post(path).thenReturn().asString();
+		given().header("Content-type", "application/json").body(jo).when().post(configFileReader.getOrderProcessPathParams()).thenReturn().asString();
 		ExtentCucumberAdapter.addTestStepLog("<b>" + "<font color=" + "green>" + "Request with invalid order status sent to the server" + "</font>" + "</b>");
 
 		
@@ -125,7 +125,7 @@ public class ValidateOrderProcessAPI {
 		JSONObject jo = new JSONObject(map);
 		
 		//Making the post request with the payload having non-existing order ID
-		given().header("Content-type", "application/json").body(jo).when().post(path).thenReturn().asString();
+		given().header("Content-type", "application/json").body(jo).when().post(configFileReader.getOrderProcessPathParams()).thenReturn().asString();
 		ExtentCucumberAdapter.addTestStepLog("<b>" + "<font color=" + "green>" + "Request with non-existing order id sent to the server" + "</font>" + "</b>");
 		
 	}
